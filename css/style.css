@@ -82,7 +82,41 @@ nav{
 
 .messages{
     background-image: url(/img/mine.jpg);
+
+    display: flex;
+    flex-direction: column;
 }
+
+.message {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 60%;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.message.sent {
+    align-self: flex-end;
+    background-color: #DCF8C6;
+}
+
+.message.received {
+    background-color: #FFFFFF;
+}
+
+.message-content {
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.message-time {
+    font-size: 10px;
+    color: #999999;
+    margin-top: 5px;
+}
+
 
 .active-user{
     padding: 20px;
