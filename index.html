@@ -23,7 +23,18 @@
         <div class="left-column">
 
             <nav class="navbar">
-            
+                <div class="user-icon">
+                    <img src="img/avatar_4.jpg" alt="fnf">
+                </div>
+                <div class="user-info">
+                    <div class="user-name">Luca</div>
+                    <div class="my-status">online</div>
+                </div>
+                <div class="user-menu">
+                    <i class="fa-solid fa-circle-notch"></i>
+                    <i class="fa-regular fa-message"></i>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
             </nav>
 
             <div class="contacts">
@@ -45,6 +56,19 @@
         <div class="right-column">
 
             <div class="active-user">
+                <div class="right-user-icon">
+                    <img src="img/avatar_4.jpg" alt="fnf">
+                </div>
+                <div class="user-info">
+                    <div class="user-name">{{activeContact.name}}</div>
+                    <div class="my-status">Ultimo accesso oggi alle 12:00</div>
+                </div>
+                <div class="user-menu">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <i class="fa-solid fa-paperclip"></i>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+            </nav>
             
             </div>
 
@@ -58,7 +82,20 @@
 
                 </div>
                 
-            
+            </div>
+
+            <div class="input-wrapper">
+                <div class="emoticon">
+                    <i class="fa-regular fa-face-smile"></i>
+                </div>
+                <div class="input-field">
+                    <input type="text" v-model="newMessage" @keyup.enter="sendMessage" placeholder="type a message...">
+                </div>
+                <div class="voice">
+                    <i class="fa-solid fa-microphone-lines"></i>
+                </div>
+
+
             </div>
 
         </div>

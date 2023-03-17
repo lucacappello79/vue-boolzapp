@@ -180,6 +180,7 @@ createApp({
         ], // /array contatti
 
         activeContact: "",
+        newMessage: "",
         
 
     } // /return
@@ -189,12 +190,26 @@ createApp({
   
   methods: {
       
-      makeItBig: function(index) {
+        makeItBig: function(index) {
           
           this.activeContact = index;
-          
+
         },
+
+        sendMessage: function() {
+            
+            this.activeContact.messages.push({
+
+                message: this.newMessage,
+
+                status: 'sent',
+
+            });
+
+            this.newMessage = "";
         
+        },
+
     },
     
     mounted() {
