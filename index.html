@@ -55,7 +55,8 @@
 
 
             <div class="contacts">
-                <div v-for="(element, index) in contatti" class="contact" @click="makeItBig(element)">
+                <div v-for="(element, index) in getFilteredContacts()" class="contact" @click="makeItBig(element)">
+                <!-- <div v-for="(element, index) in contatti" class="contact" @click="makeItBig(element)"> -->
                     <div class="user-icon">
                         <img :src="element.avatar" alt="fnf">
                     </div>

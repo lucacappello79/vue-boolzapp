@@ -189,11 +189,25 @@ createApp({
   }, // /data
 
   
-  methods: {
+    methods: {
+
+
+        getFilteredContacts: function() {
+
+        const searchedContacts = this.searchedContacts.toLowerCase();
+
+        return this.contatti.filter((contact) =>
+
+            contact.name.toLowerCase().includes(searchedContacts)
+
+        );
+
+        },
       
         makeItBig: function(index) {
           
-          this.activeContact = index;
+        //this.activeContact = this.contatti[index]
+        this.activeContact = index;
 
         },
 
@@ -239,7 +253,7 @@ createApp({
 
             return replies[Math.floor(Math.random() * replies.length)];
 
-          },
+        },
 
     },
     
