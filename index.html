@@ -37,6 +37,23 @@
                 </div>
             </nav>
 
+                
+            <div class="search-container">
+                <div class="search-inner">
+
+                    <div class="search-icon">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+
+                    <div class="search-input">
+                        <input type="text" v-model="searchedContacts" placeholder="Search contacts...">
+                    </div>
+
+                </div>
+            </div>
+
+
+
             <div class="contacts">
                 <div v-for="(element, index) in contatti" class="contact" @click="makeItBig(element)">
                     <div class="user-icon">

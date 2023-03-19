@@ -181,6 +181,7 @@ createApp({
 
         activeContact: "",
         newMessage: "",
+        searchedContacts: "",
         
 
     } // /return
@@ -202,13 +203,43 @@ createApp({
 
                 message: this.newMessage,
 
-                status: 'sent',
+                status: "sent",
 
             });
 
             this.newMessage = "";
+
+            setTimeout(() => {
+
+                this.activeContact.messages.push({
+
+                    message: this.randomReply(),
+
+                    status: "received",
+
+                });
+
+            }, 3000);
         
         },
+
+        randomReply() {
+
+            const replies = [
+
+              "First forget inspiration. Habit is more dependable. Habit will sustain you whether you're inspired or not. Habit will help you finish and polish your stories. Inspiration won't. Habit is persistence in practice",
+              "Ok, grazie",
+              "The battles that count aren't the ones for gold medals. The struggles within yourself—the invisible, inevitable battles inside all of us—that's where it's at",
+              "Puoi inviarmi ulteriori dettagli?",
+              "Someone will declare, “I am the leader!” and expect everyone to get in line and follow him or her to the gates of heaven or hell. My experience is that it doesn’t happen that way. Others follow you based on the quality of your actions rather than the magnitude of your declarations",
+              "Mi dispiace, non posso aiutarti in questo momento",
+              "Courage is the most important of all the virtues because without courage, you can't practice any other virtue consistently",
+              "There are three ways to ultimate success: The first way is to be kind. The second way is to be kind. The third way is to be kind",
+            ];
+
+            return replies[Math.floor(Math.random() * replies.length)];
+
+          },
 
     },
     
