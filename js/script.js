@@ -226,6 +226,14 @@ createApp({
         sendMessage: function() {
 
             const currentDate = this.getTime();
+
+            const message = this.newMessage.trim();
+            
+            if (message.length === 0) {
+                
+                return;
+
+            }
             
             this.activeContact.messages.push({
 
