@@ -62,9 +62,12 @@
                     </div>
                     <div class="user-info">
                         <div class="user-name">{{element.name}}</div>
-                        <div class="message-status">Ultimo messaggio inviato</div>
+                        <div class="message-status">{{getLastMessageStatus(element)}}</div>
+                        <!-- <div class="message-status">Ultimo messaggio inviato</div> -->
                     </div>
-                    <div class="message-time">11:00 AM</div>
+
+                    <div class="message-time">{{getLastMessageTime(element)}}</div>
+                    <!-- <div class="message-time">11:00 AM</div> -->
                 </div>
             
             </div>
@@ -75,7 +78,7 @@
                   <option value="normal">Normal</option>
 
                   <option value="dark">Dark</option>
-                  
+
                 </select>
             </div>
 

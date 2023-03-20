@@ -228,7 +228,7 @@ createApp({
             const currentDate = this.getTime();
 
             const message = this.newMessage.trim();
-            
+
             if (message.length === 0) {
                 
                 return;
@@ -279,6 +279,38 @@ createApp({
             return replies[Math.floor(Math.random() * replies.length)];
 
         },
+
+        getLastMessageTime: function(contact) {
+
+            if (contact.messages.length > 0) {
+
+              const lastMessage = contact.messages[contact.messages.length - 1];
+
+              return lastMessage.date;
+
+            } else {
+
+              return "";
+
+            }
+
+        },
+
+          getLastMessageStatus: function(contact) {
+
+            if (contact.messages.length > 0) {
+
+              const lastMessage = contact.messages[contact.messages.length - 1];
+
+              return lastMessage.status === "sent" ? "Ultimo messaggio inviato" : "Ultimo messaggio ricevuto";
+
+            } else {
+
+              return "";
+
+            }
+
+        }
 
     },
     
