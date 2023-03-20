@@ -211,9 +211,25 @@ createApp({
 
         },
 
+        getTime: function() {
+
+            const now = new Date();
+
+            const date = now.toLocaleDateString();
+
+            const time = now.toLocaleTimeString();
+
+            return date + " " + time;
+
+        },
+
         sendMessage: function() {
+
+            const currentDate = this.getTime();
             
             this.activeContact.messages.push({
+
+                date: currentDate,
 
                 message: this.newMessage,
 
@@ -226,6 +242,8 @@ createApp({
             setTimeout(() => {
 
                 this.activeContact.messages.push({
+
+                    date: this.getTime(),
 
                     message: this.randomReply(),
 
@@ -247,7 +265,6 @@ createApp({
               "Puoi inviarmi ulteriori dettagli?",
               "Someone will declare, “I am the leader!” and expect everyone to get in line and follow him or her to the gates of heaven or hell. My experience is that it doesn’t happen that way. Others follow you based on the quality of your actions rather than the magnitude of your declarations",
               "Mi dispiace, non posso aiutarti in questo momento",
-              "Courage is the most important of all the virtues because without courage, you can't practice any other virtue consistently",
               "There are three ways to ultimate success: The first way is to be kind. The second way is to be kind. The third way is to be kind",
             ];
 
