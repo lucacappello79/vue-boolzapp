@@ -149,7 +149,7 @@ nav, .active-user{
     flex-direction: column;
     align-items: flex-start;
 
-    display: inline-block;
+    /* display: inline-block; */
     width: fit-content;
 
     /* max-width: 50%;
@@ -252,4 +252,17 @@ nav, .active-user{
     border: none;
     background-color: transparent;
     outline: none;
+}
+
+.navbar.dark-mode, .active-user.dark-mode {
+    background-color: black;
+}
+
+.contact.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+.contacts.dark-mode{
+    background-color: black;
 }

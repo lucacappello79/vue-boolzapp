@@ -22,7 +22,7 @@
 
         <div class="left-column">
 
-            <nav class="navbar">
+            <nav class="navbar" v-bind:class="{ 'dark-mode': mode === 'dark' }">
                 <div class="user-icon">
                     <img src="img/avatar_4.jpg" alt="fnf">
                 </div>
@@ -36,7 +36,6 @@
                     <i class="fa-solid fa-ellipsis-vertical"></i>
                 </div>
             </nav>
-
                 
             <div class="search-container">
                 <div class="search-inner">
@@ -52,10 +51,8 @@
                 </div>
             </div>
 
-
-
-            <div class="contacts">
-                <div v-for="(element, index) in getFilteredContacts()" class="contact" @click="makeItBig(element)">
+            <div class="contacts" v-bind:class="{ 'dark-mode': mode === 'dark' }">
+                <div v-for="(element, index) in getFilteredContacts()" class="contact" @click="makeItBig(element)" v-bind:class="{ 'dark-mode': mode === 'dark' }">
                 <!-- <div v-for="(element, index) in contatti" class="contact" @click="makeItBig(element)"> -->
                     <div class="user-icon">
                         <img :src="element.avatar" alt="fnf">
@@ -86,13 +83,13 @@
 
         <div class="right-column">
 
-            <div class="active-user">
+            <div class="active-user" v-bind:class="{ 'dark-mode': mode === 'dark' }">
                 <div class="right-user-icon">
                     <img :src="activeContact.avatar" alt="fnf">
                 </div>
                 <div class="user-info">
                     <div class="user-name">{{activeContact.name}}</div>
-                    <div class="my-status">Ultimo accesso oggi alle 12:00</div>
+                    <div class="my-status">Ultimo accesso {{activeContact.lastAccess}}</div>
                 </div>
                 <div class="user-menu">
                     <i class="fa-solid fa-magnifying-glass"></i>
